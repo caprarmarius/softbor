@@ -3,6 +3,7 @@ Softbor is a menegement web platform that helps the user to keep track of contac
 There are two types of entities: user and admin.
 
 Users can:
+    
     +create account
     +login
     +edit user profile
@@ -13,6 +14,7 @@ Users can:
     +add and manage contacts (customers, partners, leads)
 
 Admins can:
+    
     +create and remove user accounts
     +create another admin account
     +edit any user profile
@@ -21,6 +23,7 @@ Admins can:
     +check the statistics
     
 Technologies used: 
+   
     +Frontend: Angular, JS, HTML, CSS
     +Backend: Flask 
     +Database: MySQL
