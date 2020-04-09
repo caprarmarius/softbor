@@ -1,0 +1,40 @@
+{% extends 'base.html' %} <!--Mosteneste codul din base.html-->
+
+{% block head %} 
+<title>Tasks</title>
+{% endblock %}
+
+{% block body %}
+<h1>All Tasks</h1> 
+
+
+    <hr>
+    <h2>Add a new task:</h2>
+    <form action='/tasks' method='POST'>
+        To do:   <input type="text" name="title" id="title">
+        <br>
+        Details:    <input type ="text" name="content" id="content">
+        <br>
+        <input type="submit" value="Add">
+    </form>
+    <hr>
+
+    {% for task in tasks %}
+       <h2>{{task.title}}</h2>    
+       <p>{{task.content}}</p>
+       <p>Date posted: {{task.date_posted}}</p>
+
+       {%if task.task_done == 0%}
+            <p>To do</p>
+            <a href="/tasks/done/{{task.id}}">Done</a>
+            <a href="/tasks/edit/{{task.id}}">Edit</a>
+        {%endif%}
+
+        {%if task.task_done == 1%}
+            <p>Done</p>
+        {%endif%}
+       <a href="/tasks/delete/{{task.id}}">Delete</a>
+       <hr>
+    {%endfor%}
+
+{% endblock %}
