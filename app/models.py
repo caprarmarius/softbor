@@ -4,9 +4,6 @@ from app import db, login_manager
 
 
 
-
-# Definirea modelelor(tabelelor) pe care le folosim in baza de date
-
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), nullable=False, index=True, unique=True)
